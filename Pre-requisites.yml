@@ -1,0 +1,88 @@
+
+                                                                 ##Prerequisite
+
+#CICD: How To Deploy an Appliction To EC2 instanceusing CodePipeline and CodeDploy with Github as a Source Provider.
+
+# STEP 1: Create Github Account
+
+# - a) in a github account, create a repository.
+# - b) clone the repository to you local
+# - c) add the app files, example, index.html, or nodejs file.
+# - d) add the appspec.yml file,
+# - e) the scripts folde that constitutes the hooks section in appsec.yml file. The hooks defines the actions the of the scripts that the appspec.yml file is going to run.
+
+# STEP 2: Create Two AWS IAM Roles, one for EC2 instance, and one for CodeDeploy.
+
+#   - a)  Create EC2 instance Role. To do this, go to AWS IAM service.
+#   - click on "Roles".
+#   - Click on "create Role".
+#   - Select "AWS services".
+#   - under "common uses", check "EC2", click on "permissions".
+#   - Select "AmazonEC2RoleforAWSCodeDeploy" and hit "next".
+#   - Give the name of the role and click on "create role" to crate the role.
+
+#   - b)  Create the CodeDploy role. To do this, go to the same AWS IAM service.
+#   - click on "Roles".
+#   - Click on "create Role".
+#   - Select "AWS services".
+#   - under "common uses", select "CodeDeploy", click on "permissions".
+#   - hit "next", "next" again.
+#   - Name the role and click on "create role" to create the role.
+#   - 
+# STEP 3: Create an EC2 instanc2. the instance AMI depends on the OS in your CodeDeploy appspec.ynl file.
+
+#   - Eenable HTTP, and SSH in the security group. Other ports depend on your application. 
+#   - For "IAM role" under the "Configuration Instance Details", click on the dropdown botton and select the IAM role you create for EC2.
+#   - For "user data" under "Advance Details", copy the CodeDeploy Agent and paste in the box.
+
+
+#  STEP 4: Deploy the application
+#   - To Deploy the application, go to AWS management console and search for "CodeDeploy" services. 
+#   - In CodeDeploy, we have to do the following:
+#   - a) Create Application.
+#     To do this, go to the left navigation menu and click on "Application".
+#   - click on"Create Application.
+#   - Give the Application a name.
+#   - under "Compute platform", choose "EC2/On-premises". This is because your application is to be deployed on the EC2 instance you just created.
+#   - click on "Create Application" to create the application.
+
+#   - b) The next thing to do is to create a Deployment group.
+#     To do this click on "Deployment groups".
+#   - click on "create deployment group".
+#   - Give it a name.
+#   - Under the "Service role", choose the CodeDeploy Role you created in IAM rol.
+#   - Under "Deployment type", choose "In-place".
+#   - Under "Environment Configuration", choose "Amazon EC2 Instance".
+#   - Under the "Tag group" write the key and choose the name of the instance you created.
+#   - Leave everything as default.
+#   - Under "Deployment settings" select "CodeDeployDefault.AllAtOnce". If you have about 6 instance running, you can select "CodeDeployDefault.HalfAtOnce"
+#   - Under the Load balancer section, uncheck "Enable load balancing". This is because our EC2 instance is not running on a load balancer
+#   - Click on "create deploynment group" to create a deployment group.
+
+#   -  c) The next thing is to create a pipeline, which is the final stage of CodeDeploy.
+#      Go to the left navigation menu of CodeDeploy and click on "pipeline".
+#   - click on "create pipeline".
+#   - Give the pipeline a name.
+#   - Under "service role", select "New service role".
+#   - Leave everything as default in the "Advanced setting" section.
+#   - click on "next" to continue.
+#   - Under "Add source stage", select "Github V2" because our code is in github. If it's your first time, choose "Connect to Github" and follow the procedure.
+#   - Select the repository name in github.
+#   - select branch
+#   - Under "Output artifact format", select "CodePipeline default". Click on "Next".
+#   - Under "Add build stage" section, click on "Skip build stage". This is because our pipline will not build the application
+#   -For Deploy under "Add deploy stage" section:
+#      i) for "deploy provider", choose AWS CodeDploy.
+#     ii) for "Region", choose the rgion in which your EC2 and CodeDeploy were created.
+#     iii) for "Application name", choose the name of the appliction you created in CodeDploy.
+#     iv) for "Deployment group", choose the name of the deployment group you created in CodeDploy.
+#   - Click on "Next". Review the Pipeline and if everything looks good, hit on "Create pipeline" to create the pipeline.
+
+# Commit any change to your github to your github repo to trigger the pipeline.
+
+# Copy the Public IPV4 of your EC2 instance and paste on a new browser. 
+                                                                              # YAAAAAAAAY !!!
+
+
+
+                                                   !
