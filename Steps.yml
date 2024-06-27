@@ -1,7 +1,7 @@
 
                                                                  ## STEPS !!!!!!
 
-#CICD: How To Deploy an Appliction To EC2 instanceusing CodePipeline and CodeDploy with Github as a Source Provider.
+#CICD: How To Deploy an Appliction To EC2 instance using CodePipeline and CodeDploy with Github as a Source Provider.
 
 # STEP 1: Create Github Account
 
@@ -11,7 +11,7 @@
 # - d) add the appspec.yml file,
 # - e) the scripts folde that constitutes the hooks section in appsec.yml file. The hooks defines the actions the of the scripts that the appspec.yml file is going to run.
 
-# STEP 2: Create Two AWS IAM Roles, one for EC2 instance, and one for CodeDeploy.
+# STEP 2: Create Two AWS IAM Roles, (a) one for EC2 instance, (b) and one for CodeDeploy.
 
 #   - a)  Create EC2 instance Role. To do this, go to AWS IAM service.
 #   - click on "Roles".
@@ -28,8 +28,8 @@
 #   - under "common uses", select "CodeDeploy", click on "permissions".
 #   - hit "next", "next" again.
 #   - Name the role and click on "create role" to create the role.
-#   - 
-# STEP 3: Create an EC2 instanc2. the instance AMI depends on the OS in your CodeDeploy appspec.ynl file.
+#   
+# STEP 3: Create an EC2 instanc2. The instance AMI depends on the OS in your CodeDeploy appspec.ynl file.
 
 #   - Eenable HTTP, and SSH in the security group. Other ports depend on your application. 
 #   - For "IAM role" under the "Configuration Instance Details", click on the dropdown botton and select the IAM role you create for EC2.
