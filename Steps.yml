@@ -50,7 +50,7 @@
 #     To do this click on "Deployment groups".
 #   - click on "create deployment group".
 #   - Give it a name.
-#   - Under the "Service role", choose the CodeDeploy Role you created in IAM rol.
+#   - Under the "Service role", choose the CodeDeploy Role you created in IAM role.
 #   - Under "Deployment type", choose "In-place".
 #   - Under "Environment Configuration", choose "Amazon EC2 Instance".
 #   - Under the "Tag group" write the key and choose the name of the instance you created.
@@ -78,7 +78,7 @@
 #     iv) for "Deployment group", choose the name of the deployment group you created in CodeDploy.
 #   - Click on "Next". Review the Pipeline and if everything looks good, hit on "Create pipeline" to create the pipeline.
 
-# Commit any change to your github to your github repo to trigger the pipeline.
+# Commit any change to your github repo to trigger the pipeline.
 
 # Copy the Public IPV4 of your EC2 instance and paste on a new browser. 
                                                 
