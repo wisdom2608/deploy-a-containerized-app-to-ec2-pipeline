@@ -12,4 +12,4 @@ wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
 sudo chmod +x ./install
 sudo ./install auto
 sudo yum install -y python-pip
-sudo pip install awscli<
+sudo pip install awscli
