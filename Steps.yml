@@ -9,11 +9,11 @@
 # - b) clone the repository to you local
 # - c) add the app files, example, index.html, or nodejs file.
 # - d) add the appspec.yml file,
-# - e) the scripts folde that constitutes the hooks section in appsec.yml file. The hooks defines the actions the of the scripts that the appspec.yml file is going to run.
+# - e) the scripts folder that constitutes the hooks section in appsec.yml file. The hooks defines the actions that the appspec.yml file is going to run.
 
 # STEP 2: Create Two AWS IAM Roles, (a) one for EC2 instance, (b) and one for CodeDeploy.
 
-#   - a)  Create EC2 instance Role. To do this, go to AWS IAM service.
+#   - a)  Create EC2 instance IAM Role. To do this, go to AWS IAM service.
 #   - click on "Roles".
 #   - Click on "create Role".
 #   - Select "AWS services".
@@ -21,7 +21,7 @@
 #   - Select "AmazonEC2RoleforAWSCodeDeploy" and hit "next".
 #   - Give the name of the role and click on "create role" to crate the role.
 
-#   - b)  Create the CodeDploy role. To do this, go to the same AWS IAM service.
+#   - b)  Create a CodeDploy IAm role. To do this, go to the same AWS IAM service.
 #   - click on "Roles".
 #   - Click on "create Role".
 #   - Select "AWS services".
@@ -32,7 +32,7 @@
 # STEP 3: Create an EC2 instanc2. The instance AMI depends on the OS in your CodeDeploy appspec.ynl file.
 
 #   - Eenable HTTP, and SSH in the security group. Other ports depend on your application. 
-#   - For "IAM role" under the "Configuration Instance Details", click on the dropdown botton and select the IAM role you create for EC2.
+#   - For "IAM role" under the "Configuration Instance Details", click on the dropdown botton, select the IAM role you create for EC2.
 #   - For "user data" under "Advance Details", copy the CodeDeploy Agent and paste in the box.
 
 
@@ -41,7 +41,7 @@
 #   - In CodeDeploy, we have to do the following:
 #   - a) Create Application.
 #     To do this, go to the left navigation menu and click on "Application".
-#   - click on"Create Application.
+#   - click on "Create Application.
 #   - Give the Application a name.
 #   - under "Compute platform", choose "EC2/On-premises". This is because your application is to be deployed on the EC2 instance you just created.
 #   - click on "Create Application" to create the application.
