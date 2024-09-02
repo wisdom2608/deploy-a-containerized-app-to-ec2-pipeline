@@ -6,8 +6,8 @@
 # STEP 1: Create Github Account
 
 # - a) in a github account, create a repository.
-# - b) clone the repository to you local
-# - c) add the app files, example, index.html, or nodejs file.
+# - b) clone the repository to your local
+# - c) add the app files, example, index.html, or nodejs file into the repo cloned to your local.
 # - d) add the appspec.yml file,
 # - e) the scripts folder that constitutes the hooks section in appsec.yml file. The hooks defines the actions that the appspec.yml file is going to run.
 
@@ -29,7 +29,7 @@
 #   - hit "next", "next" again.
 #   - Name the role and click on "create role" to create the role.
 #   
-# STEP 3: Create an EC2 instanc2. The instance AMI depends on the OS in your CodeDeploy appspec.ynl file.
+# STEP 3: Create an EC2 instanc2. The instance AMI depends on the OS in your CodeDeploy appspec.yml file.
 
 #   - Eenable HTTP, and SSH in the security group. Other ports depend on your application. 
 #   - For "IAM role" under the "Configuration Instance Details", click on the dropdown botton, select the IAM role you create for EC2.
@@ -83,7 +83,8 @@
 # Copy the Public IPV4 of your EC2 instance and paste on a new browser. 
                                                 
                                             
-                                  # YAAAAAAAAY !!!
+                                  # YAAAAAAAAY...!
+                                  # It works!
 
 
 
