@@ -1,13 +1,13 @@
 
                                                                  ## STEPS !!!!!!
 
-#CICD: How To Deploy an Appliction To EC2 instance using CodePipeline and CodeDploy with Github as a Source Provider.
+#CICD: How To Deploy an Appliction To EC2 instance using CodePipeline, and CodeDploy with Github as a Source Provider.
 
 # STEP 1: Create Github Account
 
 # - a) in a github account, create a repository.
 # - b) clone the repository to your local
-# - c) add the app files, example, index.html, or nodejs file into the repo cloned to your local.
+# - c) add the app files, example, index.html, or nodejs file into the repo cloned on your local.
 # - d) add the appspec.yml file,
 # - e) the scripts folder that constitutes the hooks section in appsec.yml file. The hooks defines the actions that the appspec.yml file is going to run.
 
@@ -68,7 +68,7 @@
 #   - click on "next" to continue.
 #   - Under "Add source stage", select "Github V2" because our code is in github. If it's your first time, choose "Connect to Github" and follow the procedure.
 #   - Select the repository name in github.
-#   - select branch
+#   - select the branch
 #   - Under "Output artifact format", select "CodePipeline default". Click on "Next".
 #   - Under "Add build stage" section, click on "Skip build stage". This is because our pipline will not build the application
 #   -For Deploy under "Add deploy stage" section:
